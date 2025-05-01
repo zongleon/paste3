@@ -47,7 +47,7 @@ def kl_divergence(a_exp_dissim, b_exp_dissim, is_generalized=False):
     b_log_exp_dissim = b_exp_dissim.log()
 
     a_weighted_dissim_sum = torch.sum(a_exp_dissim * a_log_exp_dissim, axis=1)[
-        torch.newaxis, :
+        None, :
     ]
 
     divergence = a_weighted_dissim_sum.T - torch.matmul(
